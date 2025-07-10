@@ -279,27 +279,50 @@
             padding-bottom: 4rem;
             position: relative;
             overflow: hidden;
-            /* Removed margin-top and margin-bottom */
         }
-        /* Removed .benefit-card styles as they are no longer used for this section */
-
-        /* Tick icon specific styles for the list */
-        .tick-list-item {
+        /* New styles for horizontal differentiator cards */
+        .differentiator-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             display: flex;
-            align-items: flex-start; /* Align icon and text at the top */
-            margin-bottom: 1rem; /* Space between list items */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Ensure cards in a row have equal height */
         }
-        .tick-icon-svg {
-            flex-shrink: 0; /* Prevent SVG from shrinking */
-            width: 1.5rem; /* Slightly larger icon */
-            height: 1.5rem;
-            margin-right: 0.75rem; /* Space between icon and text */
-            color: #2CA1A0; /* Teal/Turquoise color for the tick */
+        .differentiator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
-        .tick-text {
-            font-size: 1.125rem; /* text-lg */
+        .differentiator-icon-wrapper {
+            background-color: #E0F2F1; /* Light teal background for icon circle */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-shrink: 0; /* Prevent icon wrapper from shrinking */
+        }
+        .differentiator-icon {
+            color: #2CA1A0; /* Teal/Turquoise for icon color */
+            width: 32px;
+            height: 32px;
+        }
+        .differentiator-text {
+            font-size: 1rem; /* text-base */
             color: #4b5563; /* text-gray-700 */
-            line-height: 1.5; /* Ensure good line height */
+            line-height: 1.5;
+        }
+        /* Adjustments for smaller screens to stack cards */
+        @media (max-width: 767px) {
+            .differentiator-grid {
+                grid-template-columns: 1fr; /* Stack vertically on small screens */
+            }
         }
 
 
@@ -526,39 +549,84 @@
                     Nos atouts uniques vous garantissent une expérience numérique supérieure.
                 </p>
             </div>
-            <div class="max-w-3xl mx-auto text-left">
-                <ul class="space-y-4">
-                    <li class="tick-list-item">
-                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 differentiator-grid">
+                <!-- Differentiator Card 1: Expertise reconnue -->
+                <div class="differentiator-card">
+                    <div class="differentiator-icon-wrapper">
+                        <svg class="differentiator-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                         </svg>
-                        <span class="tick-text">Expertise reconnue dans les technologies de pointe.</span>
-                    </li>
-                    <li class="tick-list-item">
-                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Expertise Reconnue</h3>
+                    <p class="differentiator-text">
+                        Nous maîtrisons les dernières technologies pour des solutions fiables et performantes.
+                    </p>
+                </div>
+
+                <!-- Differentiator Card 2: Approche personnalisée -->
+                <div class="differentiator-card">
+                    <div class="differentiator-icon-wrapper">
+                        <svg class="differentiator-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
-                        <span class="tick-text">Approche personnalisée et solutions adaptées à vos besoins spécifiques.</span>
-                    </li>
-                    <li class="tick-list-item">
-                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Approche Personnalisée</h3>
+                    <p class="differentiator-text">
+                        Des solutions sur mesure qui répondent précisément à vos besoins uniques.
+                    </p>
+                </div>
+
+                <!-- Differentiator Card 3: Engagement innovation et qualité -->
+                <div class="differentiator-card">
+                    <div class="differentiator-icon-wrapper">
+                        <svg class="differentiator-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                         </svg>
-                        <span class="tick-text">Engagement envers l'innovation et la qualité de service.</span>
-                    </li>
-                    <li class="tick-list-item">
-                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation & Qualité</h3>
+                    <p class="differentiator-text">
+                        Nous nous engageons pour l'excellence et l'intégration des dernières innovations.
+                    </p>
+                </div>
+
+                <!-- Differentiator Card 4: Support client réactif -->
+                <div class="differentiator-card">
+                    <div class="differentiator-icon-wrapper">
+                        <svg class="differentiator-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
                         </svg>
-                        <span class="tick-text">Support client réactif et accompagnement continu.</span>
-                    </li>
-                    <li class="tick-list-item">
-                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Support Réactif</h3>
+                    <p class="differentiator-text">
+                        Une assistance rapide et efficace pour une tranquillité d'esprit totale.
+                    </p>
+                </div>
+
+                <!-- Differentiator Card 5: Optimisation des coûts -->
+                <div class="differentiator-card">
+                    <div class="differentiator-icon-wrapper">
+                        <svg class="differentiator-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
-                        <span class="tick-text">Optimisation des coûts et retour sur investissement garanti.</span>
-                    </li>
-                </ul>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Coûts Optimisés</h3>
+                    <p class="differentiator-text">
+                        Des solutions qui maximisent votre retour sur investissement.
+                    </p>
+                </div>
+
+                <!-- New Differentiator Card 6: Des offres transparentes -->
+                <div class="differentiator-card">
+                    <div class="differentiator-icon-wrapper">
+                        <svg class="differentiator-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-2 16c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Offres Transparentes</h3>
+                    <p class="differentiator-text">
+                        Des forfaits clairs et adaptés à tous les besoins, sans frais cachés.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
