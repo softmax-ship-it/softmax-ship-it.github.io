@@ -232,7 +232,18 @@
             navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href');
                 // Check if the current path matches the link's href, or if it's the root and the link is for index.html
-                if (currentPath === linkPath || currentPath === '') { // currentPath === '' means it's the root URL
+                let isActive = false;
+                if (currentPath === '') { // If at the root URL (e.g., softmax-ship-it.github.io/)
+                    if (linkPath === 'index.html') { // Only 'Accueil' link should be active
+                        isActive = true;
+                    }
+                } else { // If on a specific page (e.g., particulier.html)
+                    if (currentPath === linkPath) {
+                        isActive = true;
+                    }
+                }
+
+                if (isActive) {
                     link.classList.add('active'); 
                 } else {
                     link.classList.remove('active'); 
