@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font: Inter for modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght==400;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Apply Inter font to the entire body */
         body {
@@ -145,6 +145,46 @@
                 min-height: 300px;
             }
         }
+
+        /* Services section specific styles - now full width */
+        .services-section {
+            background-color: #FFFFFF; /* White background for the section */
+            /* Removed border-radius, box-shadow, margin-top, margin-bottom */
+            /* Removed max-width, margin-left, margin-right */
+            padding-top: 4rem; /* py-16 */
+            padding-bottom: 4rem; /* py-16 */
+        }
+
+        .service-card {
+            background-color: #f9fafb; /* Light gray background for cards */
+            border-radius: 0.5rem; /* rounded-md */
+            padding: 2rem; /* p-8 */
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon-wrapper {
+            background-color: #E0F2F1; /* Light teal background for icon circle */
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto; /* Center and add bottom margin */
+        }
+
+        .service-icon {
+            color: #2CA1A0; /* Teal/Turquoise for icon color */
+            width: 40px;
+            height: 40px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -218,6 +258,57 @@
             <a href="#offers" class="btn-secondary inline-block px-8 py-4 text-lg font-semibold rounded-md">
                 EN SAVOIR PLUS
             </a>
+        </div>
+    </section>
+
+    <!-- New: Explore Our Services Section -->
+    <section class="services-section">
+        <div class="custom-page-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+                    Explorez nos services
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Vivez une expérience internet fluide avec notre connectivité sans fil et fibre.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Wireless RTTH -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <!-- Wi-Fi Icon -->
+                        <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Internet Sans Fil / RTTH</h3>
+                    <p class="text-gray-600">
+                        Profitez d'une connexion rapide et fiable grâce à notre technologie RTTH, pour une expérience Internet optimale à domicile ou au bureau.
+                    </p>
+                </div>
+
+                <!-- Service Card 2: Fiber Optique / FTTH -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <!-- Fiber Optic Icon (simplified) -->
+                        <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Fibre Optique / FTTH</h3>
+                    <p class="text-gray-600">
+                        Profitez d'un Internet ultra rapide avec notre solution FTTH, idéale pour les usages intensifs à la maison ou en entreprise.
+                    </p>
+                </div>
+
+                <!-- Service Card 3: Hotspots Publics -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <!-- Hotspot/Location Icon (simplified) -->
+                        <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Hotspots Publics</h3>
+                    <p class="text-gray-600">
+                        Restez connecté en déplacement grâce à nos hotspots Wi-Fi sécurisés, disponibles dans les principales zones de Nouakchott.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
