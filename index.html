@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font: Inter for modern typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght==400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Apply Inter font to the entire body */
         body {
@@ -149,8 +149,6 @@
         /* Services section specific styles - now full width */
         .services-section {
             background-color: #FFFFFF; /* White background for the section */
-            /* Removed border-radius, box-shadow, margin-top, margin-bottom */
-            /* Removed max-width, margin-left, margin-right */
             padding-top: 4rem; /* py-16 */
             padding-bottom: 4rem; /* py-16 */
         }
@@ -184,6 +182,190 @@
             color: #2CA1A0; /* Teal/Turquoise for icon color */
             width: 40px;
             height: 40px;
+        }
+
+        /* HUAWEI IdeaHub Ad Section styles */
+        .huawei-ad-section {
+            /* Changed gradient: from very light grey/white to a light blue/teal */
+            background: linear-gradient(135deg, #F8F8F8 0%, #E0F2F1 100%); /* Light off-white to very light teal */
+            color: #333; /* Darker text for better contrast on light background */
+            text-align: center;
+            /* Removed margin-top and margin-bottom */
+            border-radius: 0;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            position: relative;
+            overflow: hidden;
+        }
+        /* Inner content wrapper for the Huawei Ad Section */
+        .huawei-ad-section .inner-content-wrapper {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack content vertically on small screens */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            padding-top: 4rem; /* Shorter padding */
+            padding-bottom: 4rem; /* Shorter padding */
+            height: 100%; /* Ensure it fills parent height */
+        }
+        @media (min-width: 768px) { /* On larger screens, arrange side-by-side */
+            .huawei-ad-section .inner-content-wrapper {
+                flex-direction: row;
+                text-align: left; /* Align text to left */
+                padding: 4rem; /* More padding for desktop */
+            }
+        }
+
+        .huawei-ad-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0); /* Even subtler pattern */
+            background-size: 20px 20px;
+            opacity: 0.6;
+            z-index: 1;
+        }
+        .huawei-ad-section .content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 500px; /* Limit content width */
+            margin-bottom: 2rem; /* Space between content and image on mobile */
+        }
+        @media (min-width: 768px) {
+            .huawei-ad-section .content-wrapper {
+                margin-right: 3rem; /* Space between content and image on desktop */
+                margin-bottom: 0; /* Remove bottom margin on desktop */
+            }
+        }
+        .huawei-ad-section .ad-image-container {
+            position: relative;
+            z-index: 2;
+            flex-shrink: 0; /* Prevent image from shrinking */
+            width: 100%; /* Full width on mobile */
+            max-width: 400px; /* Max width for image */
+            height: auto;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow for image */
+        }
+        .huawei-ad-section .ad-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .huawei-ad-section .btn-primary {
+            background-color: #A5D600; /* Lime Green */
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem; /* Shorter margin */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .huawei-ad-section .btn-primary:hover {
+            background-color: #8DC200; /* Darker lime green */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pourquoi Choisir NETCOM section styles */
+        .pourquoi-netcom-section {
+            background-color: #F8F8F8; /* New very light off-white background */
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            /* Removed margin-top and margin-bottom */
+        }
+        /* Removed .benefit-card styles as they are no longer used for this section */
+
+        /* Tick icon specific styles for the list */
+        .tick-list-item {
+            display: flex;
+            align-items: flex-start; /* Align icon and text at the top */
+            margin-bottom: 1rem; /* Space between list items */
+        }
+        .tick-icon-svg {
+            flex-shrink: 0; /* Prevent SVG from shrinking */
+            width: 1.5rem; /* Slightly larger icon */
+            height: 1.5rem;
+            margin-right: 0.75rem; /* Space between icon and text */
+            color: #2CA1A0; /* Teal/Turquoise color for the tick */
+        }
+        .tick-text {
+            font-size: 1.125rem; /* text-lg */
+            color: #4b5563; /* text-gray-700 */
+            line-height: 1.5; /* Ensure good line height */
+        }
+
+
+        /* Footer styles */
+        .main-footer {
+            background-color: #A5D600; /* Lime Green from NETCOM logo */
+            color: white;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+        .footer-logo {
+            font-size: 2.5rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            margin-bottom: 1.5rem;
+            display: block; /* Ensure it takes full width for margin */
+        }
+        .footer-heading {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem;
+            color: #1a1a1a; /* Dark text for headings on light green */
+        }
+        .footer-link {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for links */
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #1a1a1a; /* Dark text on hover */
+        }
+        .social-icon {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #2CA1A0; /* Teal/Turquoise for social icon background */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+        .social-icon svg {
+            color: white;
+            width: 20px;
+            height: 20px;
+        }
+        .footer-bottom-text {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.875rem; /* text-sm */
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .footer-bottom-text a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+        .footer-bottom-text a:hover {
+            color: #1a1a1a;
         }
     </style>
 </head>
@@ -233,7 +415,7 @@
             <a href="index.html" class="nav-link text-gray-700 hover:bg-gray-100 py-3 block">Accueil</a>
             <a href="particulier.html" class="nav-link text-gray-700 hover:bg-gray-100 py-3 block">Particulier</a>
             <a href="business.html" class="nav-link text-gray-700 hover:bg-gray-100 py-3 block">Business</a>
-            <a href="a-propos.html" class="nav-link text-gray-700 hover:bg-gray-100 py-3 block">A Propos</a>
+            <a href="a-propos.html" class="nav-link font-medium px-4 py-2 rounded-md transition-all duration-200">A Propos</a>
             <a href="blog.html" class="nav-link text-gray-700 hover:bg-gray-100 py-3 block">Blog</a>
             <a href="contact.html" class="nav-link text-gray-700 hover:bg-gray-100 py-3 block">Contact</a>
             <div class="mobile-search-container p-3 border-b border-gray-100">
@@ -312,36 +494,160 @@
         </div>
     </section>
 
+    <!-- New: HUAWEI IdeaHub Ad Section (Full Width with inner container) -->
+    <section class="huawei-ad-section">
+        <div class="custom-page-container inner-content-wrapper">
+            <div class="content-wrapper">
+                <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
+                    HUAWEI IdeaHub : Réunions Intelligentes, Collaboration Facile.
+                </h2>
+                <p class="text-lg md:text-xl mb-6 opacity-90">
+                    Transformez vos espaces de travail avec la technologie interactive de pointe, disponible exclusivement chez Netcom – Partenaire HUAWEI Officiel.
+                </p>
+                <a href="#" class="btn-primary inline-block">
+                    Découvrir IdeaHub
+                </a>
+            </div>
+            <div class="ad-image-container">
+                <!-- Updated image source to the uploaded image_3ecba0.png -->
+                <img src="image_3ecba0.png" alt="HUAWEI IdeaHub Smart Screen" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/333333?text=Image+Non+Disponible';" class="rounded-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Choisir NETCOM Section -->
+    <section class="pourquoi-netcom-section">
+        <div class="custom-page-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+                    Pourquoi Choisir NETCOM ?
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Nos atouts uniques vous garantissent une expérience numérique supérieure.
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto text-left">
+                <ul class="space-y-4">
+                    <li class="tick-list-item">
+                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        <span class="tick-text">Expertise reconnue dans les technologies de pointe.</span>
+                    </li>
+                    <li class="tick-list-item">
+                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        <span class="tick-text">Approche personnalisée et solutions adaptées à vos besoins spécifiques.</span>
+                    </li>
+                    <li class="tick-list-item">
+                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        <span class="tick-text">Engagement envers l'innovation et la qualité de service.</span>
+                    </li>
+                    <li class="tick-list-item">
+                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        <span class="tick-text">Support client réactif et accompagnement continu.</span>
+                    </li>
+                    <li class="tick-list-item">
+                        <svg class="tick-icon-svg" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                        </svg>
+                        <span class="tick-text">Optimisation des coûts et retour sur investissement garanti.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="custom-page-container grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Company Info -->
+            <div>
+                <a href="index.html" class="footer-logo">NETCOM</a>
+                <p class="text-white text-opacity-90 text-sm">
+                    Votre partenaire de confiance pour des solutions informatiques innovantes et une connectivité sans faille en Mauritanie.
+                </p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.484 0-6.303 2.819-6.303 6.303 0 .415.047.816.138 1.202-5.243-.263-9.874-2.788-12.983-6.626-.547.935-.865 2.03-.865 3.192 0 2.18.118 3.383 1.173 4.577-1.096-.037-2.12-.335-3.021-.836v.08c0 3.062 2.184 5.618 5.093 6.195-.447.122-.916.187-1.401.187-.343 0-.676-.034-1.002-.095.807 2.524 3.159 4.352 5.92 4.402-2.179 1.703-4.931 2.716-7.929 2.716-.514 0-1.02-.029-1.516-.088 2.815 1.808 6.174 2.859 9.778 2.859 11.728 0 18.106-9.724 18.106-18.106 0-.276-.006-.55-.018-.824.78-.568 1.458-1.283 1.999-2.094z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.985c-.66 0-1.2-.539-1.2-1.2 0-.66.54-1.2 1.2-1.2s1.2.54 1.2 1.2c0 .661-.54 1.2-1.2 1.2zm7 6.985h-2v-3.482c0-2.261-1.498-3.116-3.5-3.116-1.493 0-2.002 1.046-2 1.724v1.874h-2v-6h2v.916c.724-1.261 1.99-1.652 3.256-1.652 3.155 0 4.744 2.042 4.744 5.945v3.393z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="footer-heading">Liens Rapides</h3>
+                <ul>
+                    <li><a href="index.html" class="footer-link">Accueil</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="a-propos.html" class="footer-link">A Propos</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="blog.html" class="footer-link">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="footer-heading">Nos Services</h3>
+                <ul>
+                    <li><a href="#" class="footer-link">Internet Sans Fil</a></li>
+                    <li><a href="#" class="footer-link">Fibre Optique</a></li>
+                    <li><a href="#" class="footer-link">Hotspots Publics</a></li>
+                    <li><a href="#" class="footer-link">Solutions Entreprises</a></li>
+                    <li><a href="#" class="footer-link">Support Technique</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="footer-heading">Contact</h3>
+                <p class="text-white text-opacity-90 text-sm mb-2">
+                    Adresse: Rue 123, Quartier Général, Nouakchott, Mauritanie
+                </p>
+                <p class="text-white text-opacity-90 text-sm mb-2">
+                    Téléphone: +222 45 25 25 25
+                </p>
+                <p class="text-white text-opacity-90 text-sm mb-2">
+                    Email: contact@netcom.mr
+                </p>
+                <p class="text-white text-opacity-90 text-sm">
+                    Heures d'ouverture: Lun-Ven, 8h-18h
+                </p>
+            </div>
+        </div>
+        <div class="custom-page-container footer-bottom-text text-center">
+            <p>&copy; 2024 NETCOM. Tous droits réservés. <a href="#">Politique de Confidentialité</a> | <a href="#">Conditions d'Utilisation</a></p>
+        </div>
+    </footer>
+
     <!-- JavaScript for active navigation link highlighting and mobile menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Navigation Highlighting ---
             const navLinks = document.querySelectorAll('.nav-link');
-            // Get the filename from the URL (e.g., 'index.html', 'particulier.html')
+            // Get the filename from the URL (e.g., 'index.html', 'a-propos.html')
             const currentPath = window.location.pathname.split('/').pop(); 
             
+            // Highlight active desktop link
             navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href');
-                // Check if the current path matches the link's href, or if it's the root and the link is for index.html
-                let isActive = false;
-                if (currentPath === '') { // If at the root URL (e.g., softmax-ship-it.github.io/)
-                    if (linkPath === 'index.html') { // Only 'Accueil' link should be active
-                        isActive = true;
-                    }
-                } else { // If on a specific page (e.g., particulier.html)
-                    if (currentPath === linkPath) {
-                        isActive = true;
-                    }
-                }
-
-                if (isActive) {
-                    link.classList.add('active'); 
-                } else {
-                    link.classList.remove('active'); 
+                // Handle both 'index.html' and root URL for 'Accueil'
+                if (currentPath === linkPath || (currentPath === '' && linkPath === 'index.html')) {
+                    link.classList.add('active'); // Use the 'active' class defined in CSS
                 }
             });
 
-            // --- Mobile Menu Toggle ---
+            // Mobile menu toggle functionality
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
